@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/datamenu/kawmankai.dart';
+import 'package:foodapp/datamenu/tamsang.dart';
 
 class menumankai extends StatefulWidget {
   const menumankai({super.key});
@@ -30,7 +31,7 @@ class _menumankaiState extends State<menumankai> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => kawmankai(),
+                          builder: (context) => kawpad()
                         ),
                       );
                     },

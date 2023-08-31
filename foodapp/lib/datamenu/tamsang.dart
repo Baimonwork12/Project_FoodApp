@@ -34,6 +34,7 @@ enum hot { one, two, three }
 // ignore: camel_case_types
 enum manyother { one, two }
 
+
 // ignore: camel_case_types
 class datakapao extends StatefulWidget {
   const datakapao({super.key});
@@ -59,6 +60,7 @@ class _datakapaoState extends State<datakapao> {
   meat? _character = meat.one;
   hot? _spicy = hot.one;
   manyother? _other = manyother.one;
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -184,6 +186,23 @@ class _datakapaoState extends State<datakapao> {
                   _spicy = value;
                 });
               }),
+              const Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'เพิ่มเติม',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              RadioListTile<egg>(
+                value: egg.one, 
+                groupValue: _ovum, 
+                onChanged: onChanged)
+              
+            ],
+          ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -281,7 +300,7 @@ class kawpad extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('กะเพรา'),
+        title: const Text('ข้าวผัด'),
       ),
       body: const datakawpad(),
     );
@@ -298,6 +317,9 @@ enum meat1 {
   eight,
   nine,
 }
+enum  egg {one,two}
+
+
 class datakawpad extends StatefulWidget {
   const datakawpad({super.key});
 
@@ -306,6 +328,7 @@ class datakawpad extends StatefulWidget {
 }
 
 class _datakawpadState extends State<datakawpad> {
+  
     int _counter = 0;
   void _incrementCounter2() {
     setState(() {
@@ -318,27 +341,147 @@ class _datakawpadState extends State<datakawpad> {
       _counter--;
     });
   }
-   meat1? _meatkawpad = meat1.one;
+  meat1? _character = meat1.one;
+   egg? _ovum =egg.one;
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          Padding(padding: EdgeInsets.all(8),
-          child: Row(mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text('เนื้อสัตว์',style: TextStyle(fontSize: 20),),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'เนื้อสัตว์',
+                  style: TextStyle(fontSize: 25),
+                ),
+              ],
+            ),
+          ),
+          RadioListTile<meat1>(
+              title: const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text('หมูกรอบ'),
+                ],
+              ),
+              value: meat1.one,
+              groupValue: _character,
+              onChanged: (meat1? value) {
+                setState(() {
+                  _character = value;
+                });
+              }),
+          const Divider(
+            height: 0,
+          ),
+          RadioListTile<meat1>(
+              title: const Text('หมูชิ้น'),
+              value: meat1.two,
+              groupValue: _character,
+              onChanged: (meat1? value) {
+                setState(() {
+                  _character = value;
+                });
+              }),
+          const Divider(
+            height: 0,
+          ),
+          RadioListTile<meat1>(
+              title: Text('หมูสับ'),
+              value: meat1.three,
+              groupValue: _character,
+              onChanged: (meat1? value) {
+                setState(() {
+                  _character = value;
+                });
+              }),
+          const Divider(
+            height: 0,
+          ),
+          RadioListTile<meat1>(
+              title: Text('ไก่'),
+              value: meat1.four,
+              groupValue: _character,
+              onChanged: (meat1? value) {
+                setState(() {
+                  _character = value;
+                });
+              }),
+          const Divider(
+            height: 0,
+          ),
+          RadioListTile<meat1>(
+              title: Text('ทะเล'),
+              value: meat1.five,
+              groupValue: _character,
+              onChanged: (meat1? value) {
+                setState(() {
+                  _character = value;
+                });
+              }),
+          
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'อื่นๆ',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ],
+            ),
+          ),
+          RadioListTile<egg>(
+            value: egg.one, groupValue: _ovum ,onChanged: (egg? value){
+              setState(() {
+                _ovum =value;
+              });
+            }),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), hintText: 'เช่นไม่ใส่หัวหอม'),
+            ),
+          ),
+          const Row(mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text('จำนวน',style: TextStyle(fontSize: 20),),
+              ),
             ],
-          ),),
-          
-          
-          
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                  onPressed: _incrementCounter3,
+                  tooltip: 'ลดจำนวน',
+                  icon: const Icon(
+                    Icons.remove,
+                    size: 25,
+                  )),
+                   Text(
+            '$_counter',
+            style: TextStyle(fontSize: 25),
+          ),
+          IconButton(
+              onPressed: _incrementCounter2,
+              tooltip: 'เพิ่มจำนวน',
+              icon: const Icon(
+                Icons.add,
+                size: 25,
+              )),
+            ],
+            
+          ),
+         
         ],
-        
-        
       ),
-      
-      
-      );
+    );
   }
 }

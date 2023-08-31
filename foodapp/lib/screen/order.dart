@@ -23,21 +23,7 @@ class _orderState extends State<order> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title:Text('ออเดอร์') ,),
-      body: const Center(
-        child: Card(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              ListTile(
-                leading: Icon(Icons.access_alarm),
-                title: Text('คำสั่งซืื้อ'),
-                 
-                
-              )
-            ],
-          ),
-        ),
-      ), 
+      
     );
   }
 }

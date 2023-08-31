@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:foodapp/datamenu/tamsang.dart';
 
 
@@ -14,8 +15,9 @@ class _menuState extends State<menu> {
 List<String> price =['50บาท','50 บาท'];
 List<String> productImage =[
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABPRMPvWAZEtbhnPKMTI7QZ5D_Ge8QvXI2A&usqp=CAU',
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWkwe5f6l-HVslpofn6im-Rd3F25XDmYCnKw&usqp=CAU'
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWkwe5f6l-HVslpofn6im-Rd3F25XDmYCnKw&usqp=CAU',
   ];
+  
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,8 @@ List<String> productImage =[
                                   Navigator.push(context, MaterialPageRoute(builder: (context,)=> kawkapao(),));
                                 }, 
                                 child: 
-                                 Text(productName[index].toString()) 
+                                 Text(productName[index].toString()),
+                                  
                                 ),
                                 
                             //     Text(productName[index].toString(),
@@ -60,18 +63,50 @@ List<String> productImage =[
                             
                             
                               ],
-                            )
+                            ),
+                            Card(
+                clipBehavior: Clip.hardEdge,
+                child: InkWell(
+                    splashColor: Colors.blue,
+                    hoverColor: Colors.red,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => kawpad()
+                        ),
+                      );
+                    },
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                            height: 50,
+                            width: 100,
+                            child: Text(
+                              'ข้าวผัดไข่',
+                              style: TextStyle(fontSize: 25),
+                            )),
+                      ],
+                    )),
+              ),
                             
                           ],
                         )
                       ],
                     ),
                   ),
+                  
                 );
+            
+                
+
               }))
             )
           ],
+          
         ),
+        
     );
   }
 }

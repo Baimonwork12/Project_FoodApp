@@ -12,6 +12,7 @@ class _listState extends State<list> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('หน้าหลัก'),),
+     
     );
   }
 }
