@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:foodapp/screen/menu.dart';
-import 'package:foodapp/screen/menumankai.dart';
+import 'package:foodapp/menu/menutamsang.dart';
+import 'package:foodapp/menu/menumankai.dart';
+
 
 
 class home extends StatefulWidget {
@@ -20,7 +21,13 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Text('หน้าหลัก') ,),
+      appBar: AppBar(title:Text('หน้าหลัก'),
+      actions: const [
+      
+      Icon(Icons.shopping_cart)
+        
+      ] ,),
+      
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(

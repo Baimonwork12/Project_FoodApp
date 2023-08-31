@@ -9,12 +9,14 @@ class profile extends StatefulWidget {
 }
 
 class _profileState extends State<profile> {
-  @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('โปร์ไฟลผู้ใช้'),
-      ),
+        ),
+        body: Text('โปรไฟล์')
+
       
     
     );

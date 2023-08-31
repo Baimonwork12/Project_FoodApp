@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/screen/cart.dart';
 
 import 'package:foodapp/screen/home.dart';
 
@@ -20,11 +21,13 @@ class _MyNavigatorState extends State<MyNavigator> {
     });
   }
 
-  List<Widget> screens = [order(), home(), profile()];
+  List<Widget> screens = [order(), home(),cart(), profile()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
         body: Stack(
+          
           children: [
             screens.elementAt(currentIndex),
           ],
@@ -38,6 +41,7 @@ class _MyNavigatorState extends State<MyNavigator> {
               label: 'คำสั่งซื้อ',
             ),
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'หน้าหลัก'),
+            BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'ตะกร้า'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person_sharp), label: 'โปรไฟล์ผู้ใช้'),
           ],
