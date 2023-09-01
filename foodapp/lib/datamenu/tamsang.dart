@@ -33,7 +33,7 @@ enum hot { one, two, three }
 
 // ignore: camel_case_types
 enum manyother { one, two }
-
+enum  egg {one,two}
 
 // ignore: camel_case_types
 class datakapao extends StatefulWidget {
@@ -60,7 +60,7 @@ class _datakapaoState extends State<datakapao> {
   meat? _character = meat.one;
   hot? _spicy = hot.one;
   manyother? _other = manyother.one;
- 
+ egg? _ovum = egg.one;
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +93,14 @@ class _datakapaoState extends State<datakapao> {
                   _character = value;
                 });
               }),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Column(
+                  children: [
+                    Text('+10')
+                  ],
+                ),
+              ),
           const Divider(
             height: 0,
           ),
@@ -186,20 +194,34 @@ class _datakapaoState extends State<datakapao> {
                   _spicy = value;
                 });
               }),
-              const Row(
+               Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.all(8.0),
+               Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Text(
                   'เพิ่มเติม',
                   style: TextStyle(fontSize: 20),
                 ),
               ),
               RadioListTile<egg>(
-                value: egg.one, 
-                groupValue: _ovum, 
-                onChanged: onChanged)
+              title: Text('ไข่เจียว'),
+            value: egg.one, 
+            groupValue: _ovum,
+            onChanged: (egg? value){
+              setState(() {
+                _ovum =value;
+              });
+            }),
+            RadioListTile<egg>(
+              title: Text('ไข่ดาว'),
+            value: egg.two, 
+            groupValue: _ovum,
+            onChanged: (egg? value){
+              setState(() {
+                _ovum =value;
+              });
+            }),
               
             ],
           ),
@@ -317,7 +339,7 @@ enum meat1 {
   eight,
   nine,
 }
-enum  egg {one,two}
+enum  egg1 {one,two}
 
 
 class datakawpad extends StatefulWidget {
@@ -342,7 +364,7 @@ class _datakawpadState extends State<datakawpad> {
     });
   }
   meat1? _character = meat1.one;
-   egg? _ovum =egg.one;
+  egg? _ovum = egg.one;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -364,7 +386,11 @@ class _datakawpadState extends State<datakawpad> {
               title: const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text('หมูกรอบ'),
+                  Text('หมูกรอบ'),SizedBox(width: 300,),
+                  
+                  Text('+10')
+                  
+                   
                 ],
               ),
               value: meat1.one,
@@ -374,6 +400,8 @@ class _datakawpadState extends State<datakawpad> {
                   _character = value;
                 });
               }),
+               
+              
           const Divider(
             height: 0,
           ),
@@ -436,7 +464,16 @@ class _datakawpadState extends State<datakawpad> {
             ),
           ),
           RadioListTile<egg>(
+            title: Text('ไข่เจียว'),
             value: egg.one, groupValue: _ovum ,onChanged: (egg? value){
+              setState(() {
+                _ovum =value;
+              });
+            }),
+            RadioListTile<egg>(
+            title: Text('ไข่ดาว'),
+            value: egg.two, 
+            groupValue: _ovum ,onChanged: (egg? value){
               setState(() {
                 _ovum =value;
               });
