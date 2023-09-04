@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
 
-
-class profile extends StatefulWidget {
-  const profile({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<profile> createState() => _profileState();
-}
-
-class _profileState extends State<profile> {
-
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('โปรไฟล์'),),
-      body: Column(
-        children: [
-          Image.asset("assets/images/storefood.png"),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
-            child: Row(mainAxisAlignment: MainAxisAlignment.center,
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset("assets/images/store.png"),
+            Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   child: ElevatedButton.icon(onPressed: (){}, 
@@ -26,10 +19,7 @@ class _profileState extends State<profile> {
                 ),
               ],
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
-            child: Row(mainAxisAlignment: MainAxisAlignment.center,
+            Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
                   child: ElevatedButton.icon(onPressed: (){}, 
@@ -37,10 +27,11 @@ class _profileState extends State<profile> {
                   label: Text('เข้าสู่ระบบ',style: TextStyle(fontSize: 20),)),
                 ),
               ],
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       )
     );
+    
   }
 }

@@ -49,7 +49,7 @@ class _homeState extends State<home> {
                       height: 100,
                       width: 500,
                       child: Image.asset(
-                        '../images/storefood.png',),)),),),
+                        '../image/storefood.png',),)),),),
             Container(
               child: Column(children: [
                 const Text('อาหารตามสั่ง',style: TextStyle(fontSize: 20),)]) ),
@@ -69,7 +69,7 @@ class _homeState extends State<home> {
                         child: SizedBox(
                         height: 100,
                         width: 500,
-                        child: Image.asset('../images/khamoo.png',
+                        child: Image.asset('../image/khamoo.png',
                                 ),),)),],),
                 Container(
               child: Column(children: [
