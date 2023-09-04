@@ -14,7 +14,7 @@ class _profileState extends State<profile> {
     return Scaffold(appBar: AppBar(title: Text('โปรไฟล์'),),
       body: Column(
         children: [
-          Image.asset("assets/images/storefood.png"),
+          Image.asset("assets/images/store.png"),
           Padding(
             padding: const EdgeInsets.fromLTRB(10, 30, 10, 0),
             child: Row(mainAxisAlignment: MainAxisAlignment.center,
